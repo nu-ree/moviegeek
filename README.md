@@ -1,46 +1,38 @@
-# The MovieGEEK Installation Guide
+# The MovieGEEK 설치 가이드
 
-The MovieGEEK is a website implemented to accompany my book, Practical Recommender Systems. 
-It is used in the book to show how recommender systems work and how you can implement them. 
-The book describes how the algorithms work and provides more detail into how the site works.
+MovieGEEK는 Kim Falk의 책 Practical Recommender Systems와 함께 구현 된 웹 사이트입니다.
+추천 시스템의 작동 방식과 구현 방법을 보여주기 위해 이 책에서 사용됩니다.
+이 책은 알고리즘의 작동 방식을 설명하고 사이트 작동 방식에 대한 자세한 정보를 제공합니다.
 
-The website is not intended as a standalone tutorial or a plug-and-play website for you to install 
-and use for your own content. 
+이 웹사이트는 실제 여러분만의 콘텐츠 사이트를 제작 및 운영하는 데 사용할 수 있는 튜토리얼이나 플러그 앤 플레이 웹사이트로 만들어진 것이 아닙니다. 
 
 ## Thanks!
-This site would not be working if it wasn’t for the [MovieTweetings](https://github.com/sidooms/MovieTweetings) 
-dataset and the poster images provided by the [themoviedb.org](https://www.themoviedb.org) API. 
-I wish to extend a big thanks to both of them for all their work.
+이 사이트는 [MovieTweetings](https://github.com/sidooms/MovieTweetings) 가 아니었으면 존재하기 어려웠을겁니다. 
+사이트에 사용된 데이터셋과 이미지는 [themoviedb.org](https://www.themoviedb.org) API에서 제공받았습니다. 
+그들의 모든 작업에 대해 그들 모두에게 큰 감사를 전하고 싶습니다.
 
 ## Project Setup
 
 ### Install Python 3.x
  
-The MovieGEEK website requires that you have Python 3.x installed. Practical Recommender Systems does not teach you 
-Python, though. You’ll need to be able to read Python code to understand the algorithms, and, of course, programming 
-experience makes it easier to implement the website. 
+The MovieGEEK 웹사이트를 운영하려면 Python 3.x 가 설치되어있어야 합니다. Practical Recommender Systems가 파이썬을 알려주진 않습니다. 여러분은 파이썬을 읽을 줄 알아야하며, 프로그래밍 경험이 있다면 이 웹사이트를 구현하는 작업이 보다 쉬울 것입니다. 
 
-The [Hitchhikers guide to Python](http://docs.python-guide.org/en/latest/) provides “both novice and expert Python 
-developers a best practice handbook to the installation, configuration, and usage of Python on a daily basis.” 
-Mac and Linux users should follow instructions in this guide. 
+[Hitchhikers guide to Python](http://docs.python-guide.org/en/latest/)는 “파이썬 초보 개발자나 전문 개발자가 실제 업무에서 일반적으로 사용하는 파이썬 설치, 컨피규레이션, 사용방법의 모범사례 핸드북"입니다. 맥이나 리눅스 유저는 이 가이드에 있는 안내를 따라가세요. 
 
-Windows users, because installing Python and its packages can be tricky for you, I recommend using the 
-[Anaconda](https://www.anaconda.com/distribution/) package for the simplest install. 
-If you want to, you can use the Windows instructions in the Hitchhiker’s Guide, 
-but I have always used the Anaconda package.
+윈도우 유저라면, 파이썬이나 파이썬 패키지를 사용하는 것이 다소 까다로울 수 있으므로, 가장 간단하게 설치할 수 있는 [아나콘다](https://www.anaconda.com/distribution/) 패키지를 이용하길 추천합니다. 
+원한다면 the Hitchhiker’s Guide 의 윈도우 버전 안내를 활용할 수도 있겠지만, 저는 항상 아나콘다 패키지를 이용해왔습니다. 
 
 ## Download source code
-You have two choices for downloading the source code – downloading a zip file of the source code or using Git. 
+소스코드를 다운 받는 방법은 두 가지 입니다 - 소스코드 zip 파일을 다운받거나 Git을 사용하시면 됩니다. 
 
-* *Downloading a zip file*
+* *Zip 파일 다운받기*
  
-   From the main [MovieGEEK directory on GitHub](https://github.com/practical-recommender-systems/moviegeek), 
-   click the green “Clone or download” button and choose to download a zip file to your computer.
+   [깃허브의 MovieGEEK](https://github.com/practical-recommender-systems/moviegeek)의 메인 디렉토리에서, 
+   초록색 "클론 또는 다운로드" 버튼을 클릭하시고 컴퓨터에 zip 파일을 다운받으세요. 
    
-* *Using Git*
+* *Git 사용하기*
 
-   Clone this repository or create a fork in your GitHub, and then clone that instead. The following command 
-   will create a copy on your computer.
+   이 리파지토리를 바로 클론하거나 당신의 깃허브에 포크한 다음에 클론하세요. 아래 코맨드를 사용하면 컴퓨터에 복사본이 만들어질 겁니다. 
    `> git clone https://github.com/practical-recommender-systems/moviegeek.git`
 
 ## Create a virtual environment for the project
