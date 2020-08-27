@@ -65,53 +65,49 @@ virtualenv가 설치되어있다는 걸 확인하셨다면, 아래 커맨드를 
 
 *   *Non-Anaconda users* 
 
-    Use pip to install the required files:
+    pip을 이용해 필요한 파일을 설치하세요:
     ```bash
     > pip3 install -r requirements.txt
     ```
 *   *Anaconda users*
 
-    Thanks, TechnologyScout.net for these instructions:
+    TechnologyScout.net, 설명해주셔서 감사합니다:
     ```bash
     > while read requirement; do conda install --yes $requirement; done < requirements.txt    
     ```
     
 ## Database setup
 
-Django is setup to run with Sqllite3 out of the box, which is enough to run everything. However, some 
-things will be considerably faster if you install PostGreSQL. 
 
-*   If you do want to install Postgres, follow the Postgres installation steps before you create the databases. 
-*   If you don’t want to install Postgres, jump to *Create and populate the MovieGEEKS databases* section.
+Django는 박스 외부의 Sqllite3를 이용해 작동하도록 셋업되어 있으며, 이것 만으로도 모든 것을 실행함에 있어서 충분합니다. 하지만, 일부는 PostGreSQL를 사용함으로 상당히 빨라질겁니다. 
+* Postgres를 설치하고 싶다면, 데이터베이스를 생성하기 전에 Postgres 설치 안내를 따라가세요.
+* Postgres를 설치하고싶지 않다면, *Create and populate the MovieGEEKS databases* 섹션으로 넘어가세요. 
 
 ### [PostGreSQL-OPTIONAL] Install and use PostGreSQL
 
-Django comes with a database that enables you to run the website without an external database. However, using another 
-database makes it faster. I had good experiences using the PostGreSQL db.
- 
+장고는 외부 데이터베이스 없이 웹사이트를 구동할 수 있도록 데이터베이스가 내장되어있습니다. 하지만, 다른 데이터베이스를 사용하면 더 빨라집니다. 개인적으로 PostGreSQL db를 잘 사용한 경험이 있습니다. 
+
 ####  Install and run PostGreSQL
-First, install Postgres and run it. 
-Download the correct postgresql version for your operating system [here](https://www.postgresql.org/download/),
- and follow the instructions on from the download page to install and run it. 
+
+먼저, Postgres를 설치하고 실행합니다. 
+[여기에서](https://www.postgresql.org/download/) 여러분의 운영체제에 맞는 postgresql 버전을 다운로드 받으시고, 다운로드 페이지에 있는 설치 안내를 따라간 후에 실행해보세요. 
 
 #### Create the database for MovieGEEK 
 
-Use PostGreSQL’s admin tool pgadmin to create a database. Name it `moviegeek`. Write down which username and password you usd to create the database. You will use that information in two steps from now when you change the Django settings.
+PostGreSQL의 어드민 툴 pgadmin을 이용해 데이터베이스를 만듭니다. 데이터베이스 이름은 `moviegeek`으로 해주세요. username과 password는 데이터베이스를 만들 때 사용한 것으로 넣어주세요. 앞으로 두 단계 더 진행한 후에 Django 세팅을 바꿔줄 때도 이 정보를 다시 사용할 겁니다.
 
 #### Install the Python database driver 
 
-Once the PostGreSQL database is spinning, it’s time for the Python driver, which enables Django to talk with the 
-database. I recommend using [Psycopg](https://www.psycopg.org/). Download it [here](https://pypi.org/project/psycopg2/). 
-Install it following these [instructions](https://www.psycopg.org/docs/install.html). 
+PostGreSQL 데이터베이스가 돌아간다면, 이제 Django가 데이터베이스와 이야기할 수 있게 해주는 파이썬 드라이버를 준비할 차례입니다. [Psycopg](https://www.psycopg.org/)를 사용하길 추천합니다. 
+[여기](https://pypi.org/project/psycopg2/)에서 다운받으세요. 설치는 이 [안내](https://www.psycopg.org/docs/install.html)를 따라주세요.
 
 ####  Configure the Django database connection to connect to PostGreSql
 
-If you use a PostGreSQL (or another db) you need to configure the Django database connection for MovieGEEKS, follow 
-these steps. Refer to Django docs here if you need more details. 
+PostGreSQL(혹은 다른 db)를 사용한다면, MovieGEEKS에 사용할 장고 데이터베이스 연결을 설정해야 합니다. 아래 각 단계를 따라주세요. 자세한 내용이 필요하다면, 장고 공식문서를 참고하세요. 
 
-Open `prs_project/settings.py` 
+`prs_project/settings.py`를 열어주세요. 
 
-Update the following:
+아래 내용을 업데이트해주세요:
 
 ```python
 DATABASES = {
@@ -125,21 +121,21 @@ DATABASES = {
     }
 }
 ```
-Update the USER, PASSWORD, HOST, and PORT fields:
-* USER(db_user): Use the user name you created with the MovieGEEK database
-* PASSWORD(db_user_password): Use the password you created with the MovieGEEK database
-* HOST (db_host): localhost (if you have have installed it on your private machine)
-* PORT (db_port_number): 5432 (the default port)
+USER, PASSWORD, HOST, PORT 필드를 업데이트해주어야 합니다 :
+* USER(db_user): MovieGEEK 데이터베이스를 생성할 때 사용한 유저 네임을 이용해주세요. 
+* PASSWORD(db_user_password): MovieGEEK 데이터베이스를 생성할 때 사용한 패스워드를 이용해주세요. 
+* HOST (db_host): localhost (개인 머신에 설치했다면)
+* PORT (db_port_number): 5432 (디폴트 포트 넘버)
 
-For more information please refer to the Django documentation [link](https://docs.djangoproject.com/en/2.2/ref/databases/)
+자세한 정보가 필요하다면 이 문서를 참고하세요.[link](https://docs.djangoproject.com/en/2.2/ref/databases/)
 
 ### Create and populate the MovieGEEKS databases
-Everyone must follow these steps, whether or not you are using PostGreSQL.
+
+Postgresql 사용여부와 관계없이 독자분들은 모두 아래 단계를 따라주셔야합니다. 
 
 #### Create the MovieGEEKS databases
 
-When the database connection is configured, you can run the following commands to create the databases that Django 
-and this website need to run.
+데이터베이스 연결이 설정되었다면, 아래 커맨드를 이용해 장고와 이 웹사이트를 구동하는데 필요한 데이터베이스를 만들 수 있을 겁니다. 
 
 ```bash
 > python3 manage.py makemigrations
@@ -147,27 +143,27 @@ and this website need to run.
 ```
 
 #### Populate the database 
-Run the following script to download the datasets for the MovieGEEKS website. 
+MovieGEEKS 웹사이트에 필요한 데이터셋을 다운로드 받기 위해 아래 스크립트를 실행해주세요. 
 
-WARNING: Mac users running Python 3.7 or higher, before you populate the databases, you need to run this command. 
-`/Applications/Python\ 3.7/Install\ Certificates.command`. More details [here](https://bugs.python.org/issue28150)
- and [here](https://timonweb.com/tutorials/fixing-certificate_verify_failed-error-when-trying-requests_html-out-on-mac/).
+경고: 파이썬 3.7 이상 사용하시는 맥 유저는 데이터베이스를 채워넣기전에, 아래 커맨드를 실행해주셔야합니다. 
+`/Applications/Python\ 3.7/Install\ Certificates.command`. 자세한 사항은 [여기](https://bugs.python.org/issue28150)와 [여기](https://timonweb.com/tutorials/fixing-certificate_verify_failed-error-when-trying-requests_html-out-on-mac/)를 참고해주세요.
 
-Everyone, run these commands to populate the databases.
+데이터베이스를 채워주기 위해 아래 커맨드를 실행해주세요. 
+
 ```bash
 > python3 populate_moviegeek.py
 > python3 populate_ratings.py
 ```
-WARNING: This might take some time.
+경고: 시간이 꽤 걸릴 수 있습니다. 
 
 ###  Create an ID for themoviedb.org
 
-You have to create an ID with themoviedb.org to use its pictures.
+themoviedb.org의 이미지를 사용하기 위해서는 아이디를 만들어야합니다. 
 
-* Go to [https://www.themoviedb.org/account/signup](https://www.themoviedb.org/account/signup) 
-* Sign up
-* Login, go to your account settings and [create an API](https://www.themoviedb.org/settings/api). You can access 
-settings by clicking the avatar in the upper right-hand corner (the default is a blue circle with a white logo in it). 
+* [https://www.themoviedb.org/account/signup](https://www.themoviedb.org/account/signup)에 접속합니다.
+* 가입해주세요.
+* 로그인 한 다음에, account settings에서 [create an API](https://www.themoviedb.org/settings/api)로 들어가주세요. 설정화면은 우측 상단에 있는 아바타를 클릭하시면 됩니다().
+ 
 Then you’ll see settings on the left. 
 * Create a file in the moviegeek directory called ".prs" 
 * Open .prs and add { "themoviedb_apikey": <INSERT YOUR APIKEY HERE>}
