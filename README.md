@@ -38,15 +38,13 @@ The MovieGEEK 웹사이트를 운영하려면 Python 3.x 가 설치되어있어�
 ## Create a virtual environment for the project
 
 코드 실행 전에, 가상 환경을 만들어야 합니다. 추가 정보가 필요하다면, The Hitchhiker’s Guide를 [참고하세요](https://docs.python-guide.org/dev/virtualenvs).
-가상환경이 설치되었는지 확인하고, 설치되어 있지 않다면 [이 내용](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv)을 읽어보세요.
+virtualenv이 설치되었는지 확인하고, 설치되어 있지 않다면 [이 내용](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv)을 읽어보세요.
 아나콘다를 사용하거나 the Hitchhiker’s Guide를 따라해보면, 설치가 되어있을겁니다. 설치가 되어있는지 확인하기 위해서는 아래 커맨드를 사용하세요. 
 
 ```bash
 > virtualenv --version
 ```
-
-Once you have confirmed you have virtualenv installed, create the virtual environment using the following 
-commands (Anaconda users, please use the Anaconda-specific commands):
+virtualenv가 설치되어있다는 걸 확인하셨다면, 아래 커맨드를 이용해 가상 환경을 만들어주세요. (아나콘다 유저분들은 아나콘다 커맨드를 이용해주세요)
 
 *   *Non-Anaconda users*:
     ```bash
@@ -60,11 +58,10 @@ commands (Anaconda users, please use the Anaconda-specific commands):
     > conda create -n prs python=3.6
     > conda activate prs
     ```
-    Note that 3.6 should be replaced with 3.x, with x representing the version you are using. 
+    여기서 3.6은 여러분이 이용하고 있는 버전 3.x로 고쳐서 사용하여샤 합니다. 
 
 ### Get the required packages
-There are Anaconda specific instructions for this step, too; be sure to use those if they apply!
-
+이부분에도 아나콘다는 따로 설명이 있으니, 주의하세요!
 
 *   *Non-Anaconda users* 
 
