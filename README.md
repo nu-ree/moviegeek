@@ -37,12 +37,9 @@ The MovieGEEK 웹사이트를 운영하려면 Python 3.x 가 설치되어있어�
 
 ## Create a virtual environment for the project
 
-Before you run the code, create a virtual environment. The Hitchhiker’s Guide provides a 
-[good overview](https://docs.python-guide.org/dev/virtualenvs) 
-if you want more information. Verify that you have virtualenv installed, and if not, read more 
-[here](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv). 
-If you followed the Hitchhiker’s Guide or used Anaconda, it should already be installed, though. Use 
-this command to verify it’s installed:
+코드 실행 전에, 가상 환경을 만들어야 합니다. 추가 정보가 필요하다면, The Hitchhiker’s Guide를 [참고하세요](https://docs.python-guide.org/dev/virtualenvs).
+가상환경이 설치되었는지 확인하고, 설치되어 있지 않다면 [이 내용](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv)을 읽어보세요.
+아나콘다를 사용하거나 the Hitchhiker’s Guide를 따라해보면, 설치가 되어있을겁니다. 설치가 되어있는지 확인하기 위해서는 아래 커맨드를 사용하세요. 
 
 ```bash
 > virtualenv --version
