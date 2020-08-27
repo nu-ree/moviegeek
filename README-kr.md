@@ -146,7 +146,7 @@ Postgresql 사용여부와 관계없이 독자분들은 모두 아래 단계를 
 MovieGEEKS 웹사이트에 필요한 데이터셋을 다운로드 받기 위해 아래 스크립트를 실행해주세요. 
 
 경고: 파이썬 3.7 이상 사용하시는 맥 유저는 데이터베이스를 채워넣기전에, 아래 커맨드를 실행해주셔야합니다. 
-`/Applications/Python\ 3.7/Install\ Certificates.command`. 자세한 사항은 [여기](https://bugs.python.org/issue28150)와 [여기](https://timonweb.com/tutorials/fixing-certificate_verify_failed-error-when-trying-requests_html-out-on-mac/)를 참고해주세요.
+`open /Applications/Python\ 3.7/Install\ Certificates.command`. 자세한 사항은 [여기](https://bugs.python.org/issue28150)와 [여기](https://timonweb.com/tutorials/fixing-certificate_verify_failed-error-when-trying-requests_html-out-on-mac/)를 참고해주세요.
 
 데이터베이스를 채워주기 위해 아래 커맨드를 실행해주세요. 
 
@@ -162,22 +162,21 @@ themoviedb.org의 이미지를 사용하기 위해서는 아이디를 만들어�
 
 * [https://www.themoviedb.org/account/signup](https://www.themoviedb.org/account/signup)에 접속합니다.
 * 가입해주세요.
-* 로그인 한 다음에, account settings에서 [create an API](https://www.themoviedb.org/settings/api)로 들어가주세요. 설정화면은 우측 상단에 있는 아바타를 클릭하시면 됩니다().
- 
-Then you’ll see settings on the left. 
-* Create a file in the moviegeek directory called ".prs" 
-* Open .prs and add { "themoviedb_apikey": <INSERT YOUR APIKEY HERE>}
-Remember to remove the "<" and ">" When you are finished, the file contents should look something like 
+* 로그인 한 다음에, account settings에서 [create an API](https://www.themoviedb.org/settings/api)로 들어가주세요. 설정화면은 우측 상단에 있는 아바타를 클릭하시면 됩니다.
+좌측 메뉴에서 설정을 선택한 다음 API > 생성을 클릭하여 생성합니다. 
+* moviegeek 디렉토리 안에 ".prs" 라는 파일을 만들어주세요. 
+* .prs를 열고 { "themoviedb_apikey": <INSERT YOUR APIKEY HERE>} 를 추가해주세요. 
+"<" 와 ">"는 지워주셔야 합니다. 마무리 되면, 파일의 내용은 아래와 같아야합니다. 
 {"themoviedb_apikey": "6d88c9a24b1bc9a60b374d3fe2cd92ac"}
 
 ### Start the web server
-To start the development server, run this command:
+개발 서버를 시작하려면, 아래 커맨드를 실행해주세요. 
 ```bash
 > python3 manage.py runserver 127.0.0.1:8000
 ```
-Running the server like this will make the website available [http://127.0.0.1:8000](http://127.0.0.1:8000) 
+이 서버를 구동하면 [http://127.0.0.1:8000](http://127.0.0.1:8000) 로 접근 가능한 웹사이트가 만들어질겁니다. 
 
-WARNING: Other applications also use this port so you might need to try out 8001 instead.
+경고: 다른 어플리케이션에서 이 포트를 사용할 수 있는데, 그럴땐 8001 포트를 시도해보세요.
 
 ## Closing down
 When you are finished running the project you can close it down doing the following steps, or simply close the 
