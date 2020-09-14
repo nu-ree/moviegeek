@@ -58,7 +58,7 @@ virtualenv가 설치되어있다는 걸 확인하셨다면, 아래 커맨드를 
     > conda create -n prs python=3.6
     > conda activate prs
     ```
-    여기서 3.6은 여러분이 이용하고 있는 버전 3.x로 고쳐서 사용하여샤 합니다. 
+    여기서 3.6은 여러분이 이용하고 있는 버전 3.x로 고쳐서 사용하셔야 합니다. 
 
 ### Get the required packages
 이부분에도 아나콘다는 따로 설명이 있으니, 주의하세요!
